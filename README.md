@@ -11,7 +11,7 @@ The current purpose of this repository is to facilitate interactive classes on P
 
 ## Data
 We use the following datasets in some of the material:
-- PatchCamelyon (https://github.com/basveeling/pcam)[PCam]; we only use the test set - download (https://drive.google.com/file/d/1hJ9MUaEPA90BRTnTHh2xWMWtyz6wWY-n/view?usp=sharing)[here]
-- DIV2K (https://data.vision.ee.ethz.ch/cvl/DIV2K/)[DIVerse 2K]; we use a downsampled version of the test set - download (https://drive.google.com/drive/folders/1-DvfdLl3WUXVAYQSAgNjYo1v4HJSTslJ?usp=sharing)[here]
+- PatchCamelyon [PCam](https://github.com/basveeling/pcam); we only use the test set - download [here](https://drive.google.com/file/d/1hJ9MUaEPA90BRTnTHh2xWMWtyz6wWY-n/view?usp=sharing)
+- DIV2K [DIVerse 2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/); we use a downsampled version of the test set - download [here](https://drive.google.com/drive/folders/1-DvfdLl3WUXVAYQSAgNjYo1v4HJSTslJ?usp=sharing)
 
 Make sure to put the datasets in the root folder of the cloned repository or change the corresponding paths accordingly in the Python code.
