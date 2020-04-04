@@ -160,10 +160,10 @@ def edgeTaper(I,PSF):
     PSFbig = np.resize(PSFbig,(I.shape[0],I.shape[1]))
     OTF = np.real(np.fft.fft2(PSFbig))
     Iblur = np.multiply(np.fft.fft2(I),OTF)
-    Iblur = np.real(np.fft.ifft2(Iblur))
+    Iblur = np.real((np.fft.ifft2(Iblur)))
 
     #calculate the tapered image as the weighted sum of the blured and raw image
-    tapered = np.multiply(I,q)+np.multiply((1-q),Iblur)
+    tapered = np.multiply(I,q)+np.multiply((1-q),0.5*np.zeros(Iblur.shape))
     Imax = np.amax(I)
     Imin = np.amin(I)
 
@@ -247,7 +247,7 @@ def getSimpleOTF(w,px,NA,wave):
     
     PSFc = np.fft.fft2(pupil)
     PSFi = PSFc**2
-    OTF = real((np.fft.ifft2(PSFi)))
+    OTF = np.real((np.fft.ifft2(PSFi)))
     
     return OTF
 
@@ -271,7 +271,7 @@ def getOTF(w,px,NA,wave):
     
     PSFc = np.fft.fft2(pupil)
     PSFi = PSFc**2
-    OTF = real((np.fft.ifft2(PSFi)))
+    OTF = np.real((np.fft.ifft2(PSFi)))
     
     return OTF
 
