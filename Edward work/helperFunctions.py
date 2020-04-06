@@ -131,7 +131,9 @@ def edgeTaper(I,PSF):
     tapered: Image with tapered edges
     
     """
-
+    
+    I = I/np.amax(I)
+    
     PSFproj=np.sum(PSF, axis=0) # Calculate the 1D projection of the PSF
     # Generate 2 1D arrays with the tapered PSF at the leading edge
     beta1 = np.pad(PSFproj,(0,(I.shape[1]-1-PSFproj.shape[0])),'constant',constant_values=(0))
@@ -195,8 +197,9 @@ def drawGauss (std,width):
     arg = np.add(kx,ky)
     arg = np.exp(arg/(2*std*std))
     arg = arg/np.sum(arg)
+    arg = arg/np.amax(arg)
 
-    return arg;
+    return arg
 
 def getOneDPSF(w,kx):
     
