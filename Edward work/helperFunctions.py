@@ -1,6 +1,38 @@
 import numpy as np
 import numpy.fft
 
+def getPhaseMask(w,z1,z2,z3,z4):
+    """
+    Calculates the phase mask to reproduce the 4 main aberations for high NA objectives
+    ----------
+    w: width of square mask
+    
+    z1: defocus
+    z2, z3: lateral and vertical astigmatism
+    z4: spherical aberration
+    
+    Returns
+    -------
+    mask:
+        W x W square array containing the phase mask
+    
+    """
+    lims = np.linspace(-1/2,1/2,w)
+    x, y = np.meshgrid(lims,lims)
+    rho = np.sqrt(x**2 + y**2) 
+    phi = np.arctan2(y, x)
+    
+    mask = np.zeros([w,w])
+    
+    mask += z1* np.sqrt(3)*(2*(rho**2) - 1)
+    mask += z2* np.sqrt(6)*(rho**2)*np.cos(2*phi)
+    mask += z3* np.sqrt(6)*(rho**2)*np.sin(2*phi)
+    mask += z4* np.sqrt(5)*(6*(rho**4) - 6*(rho**2) + 1)
+   
+    mask = mask % (2 * np.pi) -np.pi
+        
+    return mask
+
 def getProfileCounts(img):
     """
     Calculates the average value of pixels around rings of constant thickness starting from the middle of th image.
