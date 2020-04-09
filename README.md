@@ -1,7 +1,7 @@
 # LAG-MNG
 Collection of scripts, functions and libraries from Laser Analytics Group and Molecular Neuroscience Group of University of Cambridge.
 
-Update: Clemens has added files.
+Update: Clemens has added files. Clemens has added the second lecture.
 
 Update from CFK: I am trying to create conflict.
 
