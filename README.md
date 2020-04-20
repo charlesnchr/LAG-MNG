@@ -3,7 +3,7 @@ Collection of scripts, functions and libraries from Laser Analytics Group and Mo
 
 Update: Clemens has added files. Clemens has added the second lecture.
 
-Update from CFK: I am trying to create conflict.
+
 
 ## Outline
 The current purpose of this repository is to facilitate interactive classes on Python held within the group. The material for these classes are for now kept in the root of the repository. The classes include:
